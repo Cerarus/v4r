@@ -29,7 +29,6 @@ writeMatrixToFile (const std::string &file, const Eigen::Matrix4f & matrix)
         std::cout << "Cannot open file.\n";
         return false;
     }
-
     for (size_t i = 0; i < 4; i++)
     {
         for (size_t j = 0; j < 4; j++)
@@ -96,6 +95,55 @@ readMatrixFromFile(const std::string &file, int padding)
     return matrix;
 }
 
+bool
+writeDescrToFile (const std::string &file, const Eigen::MatrixXf &matrix)
+{
+    std::ofstream out (file.c_str ());
+    if (!out)
+    {
+        std::cout << "Cannot open file.\n";
+        return false;
+    }
+    size_t i ,j;
+
+    for (i = 0; i < matrix.rows(); i++)
+    {
+        for (j = 0; j < matrix.cols(); j++)
+        {
+            out << matrix (i, j);
+                out << " ";
+        }
+    }
+    out.close ();
+
+    return true;
+}
+
+Eigen::MatrixXf
+readDescrFromFile(const std::string &file, int padding)
+{
+
+    // check if file exists
+    boost::filesystem::path path = file;
+    if ( ! (boost::filesystem::exists ( path ) && boost::filesystem::is_regular_file(path)) )
+        throw std::runtime_error ("Given file path to read Matrix does not exist!");
+
+    std::ifstream in (file.c_str (), std::ifstream::in);
+
+    char linebuf[8192];
+    in.getline (linebuf, 8192);
+    std::string line (linebuf);
+    std::vector < std::string > strs_2;
+    boost::split (strs_2, line, boost::is_any_of (" "));
+
+    Eigen::MatrixXf matrix;
+    matrix.resize(strs_2.size()-1,1);
+
+    for (int i = 0; i < strs_2.size()-1; i++)
+        matrix (i, 0) = static_cast<float> (atof (strs_2[i].c_str ()));
+
+    return matrix;
+}
 template<typename T>
 bool
 writeVectorToFile (const std::string &file, const typename std::vector<T>& val)
@@ -182,4 +230,5 @@ template V4R_EXPORTS bool writeVectorToFile<size_t> (const std::string &, const 
 }
 
 }
+
 

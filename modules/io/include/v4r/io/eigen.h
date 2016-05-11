@@ -38,6 +38,13 @@ namespace v4r
 
         V4R_EXPORTS bool
         is_number(const std::string& s);
+
+        V4R_EXPORTS bool
+        writeDescrToFile (const std::string &file, const Eigen::MatrixXf &matrix);
+
+        V4R_EXPORTS Eigen::MatrixXf
+        readDescrFromFile(const std::string &file, int padding);
+
       }
 
 }
