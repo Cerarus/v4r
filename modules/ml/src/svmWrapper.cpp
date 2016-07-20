@@ -30,11 +30,19 @@ void svmClassifier::predict(const Eigen::MatrixXf &query_data, Eigen::MatrixXi &
             svm_n_test[kk].index = kk+1;
         }
         svm_n_test[ query_data.cols() ].index = -1;
-        predicted_label(i, 0) = (int)::svm_predict(svm_mod_, svm_n_test);
 
         if(param_.svm_.probability)
         {
-            double *prob_estimates = new double[ svm_mod_->nr_class ];
+            double *prob_estimates;
+            try
+            {
+                prob_estimates = new double[ svm_mod_->nr_class ];
+            }
+            catch (std::bad_alloc&)
+            {
+                std::cerr << "Error allocating memory " << std::endl;
+            }
+
             double bla = svm_predict_probability(svm_mod_, svm_n_test, prob_estimates);
             (void) bla;
 
@@ -49,8 +57,12 @@ void svmClassifier::predict(const Eigen::MatrixXf &query_data, Eigen::MatrixXi &
 
             delete [] prob_estimates;
         }
+        else
+        {
+            predicted_label(i, 0) = (int)::svm_predict(svm_mod_, svm_n_test);
+        }
 
-        delete svm_n_test;
+        delete [] svm_n_test;
     }
 }
 
@@ -83,7 +95,7 @@ void svmClassifier::computeConfusionMatrix(const Eigen::MatrixXf &test_data,
         else
             num_falsely_classified++;
 
-        delete svm_n_test;
+        delete [] svm_n_test;
     }
 
     confusion_matrix = Eigen::MatrixXi::Zero(num_classes_, num_classes_);
@@ -224,18 +236,17 @@ void svmClassifier::trainSVM(const Eigen::MatrixXf &training_data, const Eigen::
         {
             svm_prob->x[i][kk].value = training_data(i,kk);
             svm_prob->x[i][kk].index = kk+1;
-            svm_prob->y[i] = (double)training_label(i);
         }
         svm_prob->x[i][ training_data.cols() ].index = -1;
+        svm_prob->y[i] = training_label(i);
     }
     svm_mod_ = ::svm_train(svm_prob, &param_.svm_);
-
 
     // free memory
 //    for(int i = 0; i<svm_prob->l; i++)
 //        delete [] svm_prob->x[i];
-//    delete svm_prob->x;
-//    delete svm_prob->y;
+//    delete [] svm_prob->x;
+//    delete [] svm_prob->y;
 //    delete svm_prob;
 }
 
@@ -270,7 +281,7 @@ void svmClassifier::train(const Eigen::MatrixXf &training_data, const Eigen::Vec
         svm_mod_ = ::svm_load_model(in_filename_.c_str());
 }
 
-void svmClassifier::saveModel(const std::string &filename)
+void svmClassifier::saveModel(const std::string &filename) const
 {
     if(filename.length())
     {
@@ -279,6 +290,11 @@ void svmClassifier::saveModel(const std::string &filename)
         if( ::svm_save_model(filename.c_str(), svm_mod_) == -1)
             std::cerr << "Could not save svm model to file " << filename << ". " << std::endl;
     }
+}
+
+void svmClassifier::loadModel(const std::string &filename)
+{
+    svm_mod_ = ::svm_load_model(filename.c_str());
 }
 
 void svmClassifier::shuffleTrainingData(Eigen::MatrixXf &data, Eigen::VectorXi &target)

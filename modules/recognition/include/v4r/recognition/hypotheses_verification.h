@@ -39,7 +39,7 @@
 #include <metslib/mets.hh>
 #include <glog/logging.h>
 
-
+#include <boost/format.hpp>
 #include <boost/program_options.hpp>
 #include <glog/logging.h>
 namespace po = boost::program_options;
@@ -255,6 +255,7 @@ public:
                     ("hv_eps_angle_threshold", po::value<float>(&eps_angle_threshold_deg_)->default_value(eps_angle_threshold_deg_), "smooth clustering parameter for the angle threshold")
                     ("hv_cluster_tolerance", po::value<float>(&cluster_tolerance_)->default_value(cluster_tolerance_), "smooth clustering parameter for cluster_tolerance")
                     ("hv_curvature_threshold", po::value<float>(&curvature_threshold_)->default_value(curvature_threshold_), "smooth clustering parameter for curvate")
+                    ("hv_check_smooth_clusters", po::value<bool>(&check_smooth_clusters_)->default_value(check_smooth_clusters_), "if true, checks for each hypotheses how well it explains occupied smooth surface patches. Hypotheses are rejected if they only partially explain smooth clusters.")
 
                     ("hv_vis_cues", po::bool_switch(&visualize_go_cues_), "If set, visualizes cues computated at the hypothesis verification stage such as inlier, outlier points. Mainly used for debugging.")
                     ("hv_vis_model_cues", po::bool_switch(&visualize_model_cues_), "If set, visualizes the model cues. Useful for debugging")
@@ -347,7 +348,7 @@ private:
 
     void computeModel2SceneDistances (HVRecognitionModel<ModelT> &rm);
 
-    void computeLoffset (HVRecognitionModel<ModelT> &rm, int model_id) const;
+    void computeLoffset (HVRecognitionModel<ModelT> &rm) const;
 
     void computePlanarSurfaces ( );
 

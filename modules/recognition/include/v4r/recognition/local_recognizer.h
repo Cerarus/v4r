@@ -213,11 +213,12 @@ namespace v4r
           std::vector<typename KeypointExtractor<PointT>::Ptr > keypoint_extractor_;
       public:
 
-        LocalRecognitionPipeline (const Parameter &p = Parameter()) : Recognizer<PointT>(p)
+        LocalRecognitionPipeline (const Parameter &p = Parameter()) :
+            Recognizer<PointT>(p),
+            param_(p),
+            initialization_phase_(false),
+            feat_kp_set_from_outside_(false)
         {
-            param_ = p;
-            feat_kp_set_from_outside_ = false;
-            initialization_phase_ = false;
         }
 
         size_t
@@ -302,7 +303,7 @@ namespace v4r
          * @param object model to be visualized
          */
         void
-        drawCorrespondences (const LocalObjectHypothesis<PointT> & oh)
+        drawCorrespondences (const LocalObjectHypothesis<PointT> & oh) const
         {
             pcl::PointCloud<PointT> scene_keypoints;
             pcl::copyPointCloud(*scene_, keypoint_indices_, scene_keypoints);
@@ -314,7 +315,7 @@ namespace v4r
          * @param keypoint extractor object
          */
         void
-        addKeypointExtractor (boost::shared_ptr<KeypointExtractor<PointT> > & ke)
+        addKeypointExtractor (typename KeypointExtractor<PointT>::Ptr & ke)
         {
             keypoint_extractor_.push_back (ke);
         }
@@ -323,9 +324,9 @@ namespace v4r
          * @brief Visualizes all found correspondences between scene and models
          */
         void
-        drawCorrespondences()
+        drawCorrespondences() const
         {
-            typename std::map<std::string, LocalObjectHypothesis<PointT> >::iterator it;
+            typename std::map<std::string, LocalObjectHypothesis<PointT> >::const_iterator it;
             for (it = local_obj_hypotheses_.begin(); it != local_obj_hypotheses_.end (); it++) {
                 pcl::PointCloud<PointT> scene_keypoints;
                 pcl::copyPointCloud(*scene_, keypoint_indices_, scene_keypoints);
