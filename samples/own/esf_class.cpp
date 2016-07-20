@@ -68,7 +68,7 @@ int main(int argc, char** argv){
             ("file,f", po::value<std::string>(&input)->required(),"file to be classified")
             //
             ("chop_z,z", po::value<double>(&seg_param.chop_at_z_ )->default_value(seg_param.chop_at_z_, boost::str(boost::format("%.2e") % seg_param.chop_at_z_)), "")
-            ("seg_type", po::value<int>(&seg_param.seg_type_ )->default_value(seg_param.seg_type_), "")
+            ("seg_type,t", po::value<int>(&seg_param.seg_type_ )->default_value(seg_param.seg_type_), "")
             ("min_cluster_size", po::value<int>(&seg_param.min_cluster_size_ )->default_value(seg_param.min_cluster_size_), "")
             ("max_vertical_plane_size", po::value<int>(&seg_param.max_vertical_plane_size_ )->default_value(seg_param.max_vertical_plane_size_), "")
             ("num_plane_inliers,i", po::value<int>(&seg_param.num_plane_inliers_ )->default_value(seg_param.num_plane_inliers_), "")
@@ -108,6 +108,14 @@ int main(int argc, char** argv){
     std::string fn, fp, fo;
     Eigen::MatrixXf test;
     size_t num_total, num_examples = 1, num_correct = 0;
+    Eigen::MatrixXi Checkmatrix;
+    Checkmatrix.resize(objects.size(),objects.size());
+    Checkmatrix.setZero();
+    objects.erase(find(objects.begin(),objects.end(),"svm"));
+    char end = path.back();
+    if(end!='/')
+        path.append("/");
+
     for(size_t o=0;o<objects.size();o++){
 
         fo = path;
@@ -142,19 +150,19 @@ int main(int argc, char** argv){
     std::vector<pcl::PointIndices> found_clusters;
     for(size_t k=0; k<files.size();k++){
 
-    num_total = files.size();
+        num_total = files.size();
         std::string ft = path_check;
         ft.append(files[k]);
         //ft.append("tt_hmrr89.pcd");
         std::cout<<"File classified: "<<files[k]<<std::endl;
 
 
- 
+
         pcl::io::loadPCDFile(ft, *cloud);
-//        if(found_clusters.size()==0)
-//            continue;
-//        else
-//            num_examples++;
+        //        if(found_clusters.size()==0)
+        //            continue;
+        //        else
+        //            num_examples++;
 
         seg.set_input_cloud(*cloud);
         seg.do_segmentation(found_clusters);
@@ -211,9 +219,12 @@ int main(int argc, char** argv){
 
         }
         matched_model = models_name[std::distance(numbers.begin(),std::max_element(numbers.begin(),numbers.end()))];
+        it = std::find(model_names.begin(),model_names.end(),matched_model);
+        int matched_index = std::distance(model_names.begin(), it);
+        matched_models.clear();
 
         std::string instream;
-        std::string inputfile,item;
+        std::string inputfile,item, correct_model;
         inputfile = input;
         inputfile.append("/annotation/");
         inputfile.append(files[k]);
@@ -231,20 +242,29 @@ int main(int argc, char** argv){
 
         std::vector<std::string> elements{std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{}};
 
-        std::string correct_model = elements[elements.size()-1];
+        if(elements.size()>5){
+        correct_model = elements[elements.size()-2];
+        correct_model.append("_");
+        correct_model.append(elements[elements.size()-1]);
+        }
+        else
+            correct_model = elements[elements.size()-1];
+
+        it = std::find(model_names.begin(),model_names.end(),correct_model);
+        int correct_index = std::distance(model_names.begin(), it);
 
         if(!correct_model.compare(matched_model)){
-            num_correct++;
-            std::cout<<"CORRECT"<<std::endl;
-        }
+                    num_correct++;
+                    std::cout<< "Objects Should: " << correct_model << ". Classified: " << matched_model <<". CORRECT" <<  std::endl;
+                }
+                else
+                    std::cout<< "Objects Should: " << correct_model << ". Classified: " << matched_model <<  std::endl;
         std::cout<<std::endl;
-
+        Checkmatrix(correct_index,matched_index)++;
         //        for (size_t k=0; k<matched_models.size();k++)
         //            std::cout<<model_names[matched_models[k]]<<std::endl;
 
-        std::cout<<"Total number of examples classified: "<< num_examples<<std::endl;
 
-        std::cout<<"Total number of correct examples: "<<num_correct<<std::endl;
         std::cout<<std::endl;
         if(visualize){
             pcl::visualization::CloudViewer viewer ("Simple Cloud Viewer");
@@ -256,6 +276,9 @@ int main(int argc, char** argv){
 
         }
     }
+
+
+    std::cout<< Checkmatrix <<std::endl;
 
     std::cout<<"Total number of examples classified: "<< num_examples<<std::endl;
 

@@ -24,7 +24,8 @@
 #ifndef V4R_CNN_FEATURE_EXTRACTOR_H__
 #define V4R_CNN_FEATURE_EXTRACTOR_H__
 
-#include <caffe/net.hpp>
+//#include <caffe/net.hpp>
+#include "/home/martin/github/caffe/include/caffe/net.hpp"
 #include <opencv/cv.h>
 #include <v4r/features/global_estimator.h>
 

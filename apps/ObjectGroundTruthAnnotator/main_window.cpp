@@ -322,7 +322,7 @@ void MainWindow::lock_with_icp()
     {
         ModelTPtr model = sequence_hypotheses_[selected_hypothesis_];
         boost::shared_ptr < distance_field::PropagationDistanceField<pcl::PointXYZRGB> > dt;
-//        model->getVGDT (dt);
+        model->getVGDT (dt);
 
         pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr model_cloud;
         model_cloud = model->getAssembled( resolution_mm_ );
@@ -982,7 +982,7 @@ MainWindow::MainWindow(int argc, char *argv[])
   source_->setLoadViews (false);
   source_->setLoadIntoMemory(false);
   source_->generate ();
-//  source_->createVoxelGridAndDistanceTransform (0.005f);
+  source_->createVoxelGridAndDistanceTransform (0.005f);
 
   QApplication app(argc,argv);
   mainWindow_ = new QWidget;

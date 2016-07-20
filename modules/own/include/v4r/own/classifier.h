@@ -25,7 +25,7 @@
 #define V4R_CLASSIFER_H__
 
 #include <v4r/core/macros.h>
-#include <v4r/own/types.h>
+#include <v4r/ml/types.h>
 #include <boost/shared_ptr.hpp>
 #include <Eigen/Eigen>
 #include <iostream>
