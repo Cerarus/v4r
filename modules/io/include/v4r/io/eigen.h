@@ -45,7 +45,13 @@ namespace v4r
         writeDescrToFile (const std::string &file, const Eigen::MatrixXf &matrix);
 
         V4R_EXPORTS Eigen::MatrixXf
-        readDescrFromFile(const std::string &file, int padding);
+        readDescrFromFile(const std::string &file, int padding, int rowSize);
+
+        V4R_EXPORTS bool
+        writeLabelToFile (const std::string &file, const Eigen::VectorXi &vector);
+
+        V4R_EXPORTS Eigen::VectorXi
+        readLabelFromFile(const std::string &file, int padding);
 
       }
 

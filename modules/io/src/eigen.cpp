@@ -2,6 +2,8 @@
 #include <vector>
 #include <iostream>
 
+#include <ctime>
+
 #include <boost/algorithm/string.hpp>
 #include <boost/filesystem.hpp>
 
@@ -112,6 +114,7 @@ writeDescrToFile (const std::string &file, const Eigen::MatrixXf &matrix)
             out << matrix (i, j);
                 out << " ";
         }
+        out<<'\n';
     }
     out.close ();
 
@@ -119,7 +122,7 @@ writeDescrToFile (const std::string &file, const Eigen::MatrixXf &matrix)
 }
 
 Eigen::MatrixXf
-readDescrFromFile(const std::string &file, int padding)
+readDescrFromFile(const std::string &file, int padding, int rowSize)
 {
 
     // check if file exists
@@ -129,20 +132,85 @@ readDescrFromFile(const std::string &file, int padding)
 
     std::ifstream in (file.c_str (), std::ifstream::in);
 
-    char linebuf[8192];
-    in.getline (linebuf, 8192);
-    std::string line (linebuf);
-    std::vector < std::string > strs_2;
-    boost::split (strs_2, line, boost::is_any_of (" "));
+    int bufferSize = 819200;
+    //int bufferSize = rowSize * 10;
+
+    char linebuf[bufferSize];
+
+
 
     Eigen::MatrixXf matrix;
-    matrix.resize(strs_2.size()-1,1);
-
-    for (int i = 0; i < strs_2.size()-1; i++)
-        matrix (i, 0) = static_cast<float> (atof (strs_2[i].c_str ()));
-
+    matrix.resize(0,rowSize);
+    int j=0;
+    while(in.getline (linebuf, bufferSize)){
+        int start_s=clock();
+        std::string line (linebuf);
+        std::vector < std::string > strs_2;
+        boost::split (strs_2, line, boost::is_any_of (" "));
+        matrix.conservativeResize(matrix.rows()+1,rowSize);
+        for (int i = 0; i < strs_2.size()-1; i++)
+            matrix (j, i) = static_cast<float> (atof (strs_2[i].c_str ()));
+        j++;
+        int stop_s=clock();
+        std::cout << "time: " << (stop_s-start_s)/double(CLOCKS_PER_SEC)*1000 << std::endl;
+    }
     return matrix;
 }
+
+
+bool
+writeLabelToFile (const std::string &file, const Eigen::VectorXi &vector)
+{
+    std::ofstream out (file.c_str ());
+    if (!out)
+    {
+        std::cout << "Cannot open file.\n";
+        return false;
+    }
+    size_t i ,j;
+
+    for (i = 0; i < vector.rows(); i++)
+    {
+
+            out << vector (i);
+
+
+        out<<" ";
+    }
+    out.close ();
+
+    return true;
+}
+
+Eigen::VectorXi
+readLabelFromFile(const std::string &file, int padding)
+{
+
+    // check if file exists
+    boost::filesystem::path path = file;
+    if ( ! (boost::filesystem::exists ( path ) && boost::filesystem::is_regular_file(path)) )
+        throw std::runtime_error ("Given file path to read Matrix does not exist!");
+
+    std::ifstream in (file.c_str (), std::ifstream::in);
+
+    char linebuf[819200];
+
+
+
+    Eigen::VectorXi Vector;
+
+    in.getline (linebuf, 819200);
+        std::string line (linebuf);
+        std::vector < std::string > strs_2;
+        boost::split (strs_2, line, boost::is_any_of (" "));
+        Vector.resize(strs_2.size()-1);
+        for (int i = 0; i < strs_2.size()-1; i++)
+            Vector ( i) = static_cast<int> (atof (strs_2[i].c_str ()));
+
+    return Vector;
+}
+
+
 template<typename T>
 bool
 writeVectorToFile (const std::string &file, const typename std::vector<T>& val)

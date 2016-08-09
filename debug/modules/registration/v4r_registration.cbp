@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="v4r_registration" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\cmake\templates\;CMake Files\modules\;CMake Files\modules\core\;CMake Files\modules\core\include\;CMake Files\modules\core\include\v4r\;CMake Files\modules\core\include\v4r\core\;CMake Files\modules\change_detection\;CMake Files\modules\common\;CMake Files\modules\features\;CMake Files\modules\io\;CMake Files\modules\keypoints\;CMake Files\modules\ml\;CMake Files\modules\object_modelling\;CMake Files\modules\own\;CMake Files\modules\recognition\;CMake Files\modules\reconstruction\;CMake Files\modules\registration\;CMake Files\modules\rendering\;CMake Files\modules\segmentation\;CMake Files\modules\tracking\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\share\;CMake Files\..\..\..\..\usr\share\Ceres\;CMake Files\..\..\..\..\usr\share\pcl-1.7\;CMake Files\..\..\..\..\usr\share\OpenCV\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\vtk-5.8\;CMake Files\..\..\..\..\usr\lib\vtk-5.8\CMake\;CMake Files\..\caffe\;CMake Files\..\caffe\build\;CMake Files\3rdparty\;CMake Files\3rdparty\EDT\;CMake Files\3rdparty\SiftGPU\;CMake Files\3rdparty\SiftGPU\tmp\;CMake Files\3rdparty\metslib\;CMake Files\apps\;CMake Files\apps\segmentation\;CMake Files\apps\3D_scene_reconstruction_by_SIFT_and_MST\;CMake Files\apps\RTMT\;CMake Files\apps\ObjectGroundTruthAnnotator\;CMake Files\samples\;CMake Files\samples\examples\;CMake Files\samples\eval\;CMake Files\samples\tools\;CMake Files\samples\own\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/martin/github/v4r/debug/modules/registration" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="v4r_registration">
+         <Option output="/home/martin/github/v4r/debug/lib/libv4r_registration.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/martin/github/v4r/debug/modules/registration" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DV4RAPI_EXPORTS" />
+            <Add option="-DCERES_VERSION_LESS_1_9_0" />
+            <Add option="-DDISABLE_PCAP" />
+            <Add option="-DDISABLE_PNG" />
+            <Add option="-DUSE_OPENCV" />
+            <Add option="-DUSE_LMDB" />
+            <Add option="-DUSE_LEVELDB" />
+            <Add option="-D__V4R_BUILD=1" />
+            <Add directory="/home/martin/github/caffe/build/include" />
+            <Add directory="/home/martin/github/caffe/include" />
+            <Add directory="/home/martin/github/caffe/src" />
+            <Add directory="/home/martin/github/v4r/3rdparty" />
+            <Add directory="/home/martin/github/v4r/3rdparty/SiftGPU/src/siftgpu_external/src" />
+            <Add directory="/home/martin/github/v4r/debug" />
+            <Add directory="/home/martin/github/v4r/debug/modules/registration" />
+            <Add directory="/home/martin/github/v4r/modules/common/include" />
+            <Add directory="/home/martin/github/v4r/modules/core/include" />
+            <Add directory="/home/martin/github/v4r/modules/features/include" />
+            <Add directory="/home/martin/github/v4r/modules/io/include" />
+            <Add directory="/home/martin/github/v4r/modules/keypoints/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/atlas" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/ni" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/openni2" />
+            <Add directory="/usr/include/pcl-1.7" />
+            <Add directory="/usr/include/vtk-5.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/cuda/include" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 v4r_registration" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="v4r_registration/fast">
+         <Option output="/home/martin/github/v4r/debug/lib/libv4r_registration.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/martin/github/v4r/debug/modules/registration" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DV4RAPI_EXPORTS" />
+            <Add option="-DCERES_VERSION_LESS_1_9_0" />
+            <Add option="-DDISABLE_PCAP" />
+            <Add option="-DDISABLE_PNG" />
+            <Add option="-DUSE_OPENCV" />
+            <Add option="-DUSE_LMDB" />
+            <Add option="-DUSE_LEVELDB" />
+            <Add option="-D__V4R_BUILD=1" />
+            <Add directory="/home/martin/github/caffe/build/include" />
+            <Add directory="/home/martin/github/caffe/include" />
+            <Add directory="/home/martin/github/caffe/src" />
+            <Add directory="/home/martin/github/v4r/3rdparty" />
+            <Add directory="/home/martin/github/v4r/3rdparty/SiftGPU/src/siftgpu_external/src" />
+            <Add directory="/home/martin/github/v4r/debug" />
+            <Add directory="/home/martin/github/v4r/debug/modules/registration" />
+            <Add directory="/home/martin/github/v4r/modules/common/include" />
+            <Add directory="/home/martin/github/v4r/modules/core/include" />
+            <Add directory="/home/martin/github/v4r/modules/features/include" />
+            <Add directory="/home/martin/github/v4r/modules/io/include" />
+            <Add directory="/home/martin/github/v4r/modules/keypoints/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/atlas" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/ni" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/openni2" />
+            <Add directory="/usr/include/pcl-1.7" />
+            <Add directory="/usr/include/vtk-5.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/cuda/include" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 v4r_registration/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="v4r_registration_object">
+         <Option output="/home/martin/github/v4r/debug/modules/registration/CMakeFiles/v4r_registration_object.dir/v4r_registration_object.objlib" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/martin/github/v4r/debug/modules/registration" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DV4RAPI_EXPORTS" />
+            <Add option="-DCERES_VERSION_LESS_1_9_0" />
+            <Add option="-DDISABLE_PCAP" />
+            <Add option="-DDISABLE_PNG" />
+            <Add option="-DUSE_OPENCV" />
+            <Add option="-DUSE_LMDB" />
+            <Add option="-DUSE_LEVELDB" />
+            <Add option="-D__V4R_BUILD=1" />
+            <Add directory="/home/martin/github/caffe/build/include" />
+            <Add directory="/home/martin/github/caffe/include" />
+            <Add directory="/home/martin/github/caffe/src" />
+            <Add directory="/home/martin/github/v4r/3rdparty" />
+            <Add directory="/home/martin/github/v4r/3rdparty/SiftGPU/src/siftgpu_external/src" />
+            <Add directory="/home/martin/github/v4r/debug" />
+            <Add directory="/home/martin/github/v4r/debug/modules/registration" />
+            <Add directory="/home/martin/github/v4r/modules/common/include" />
+            <Add directory="/home/martin/github/v4r/modules/core/include" />
+            <Add directory="/home/martin/github/v4r/modules/features/include" />
+            <Add directory="/home/martin/github/v4r/modules/io/include" />
+            <Add directory="/home/martin/github/v4r/modules/keypoints/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/atlas" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/ni" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/openni2" />
+            <Add directory="/usr/include/pcl-1.7" />
+            <Add directory="/usr/include/vtk-5.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/cuda/include" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 v4r_registration_object" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="v4r_registration_object/fast">
+         <Option output="/home/martin/github/v4r/debug/modules/registration/CMakeFiles/v4r_registration_object.dir/v4r_registration_object.objlib" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/martin/github/v4r/debug/modules/registration" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DV4RAPI_EXPORTS" />
+            <Add option="-DCERES_VERSION_LESS_1_9_0" />
+            <Add option="-DDISABLE_PCAP" />
+            <Add option="-DDISABLE_PNG" />
+            <Add option="-DUSE_OPENCV" />
+            <Add option="-DUSE_LMDB" />
+            <Add option="-DUSE_LEVELDB" />
+            <Add option="-D__V4R_BUILD=1" />
+            <Add directory="/home/martin/github/caffe/build/include" />
+            <Add directory="/home/martin/github/caffe/include" />
+            <Add directory="/home/martin/github/caffe/src" />
+            <Add directory="/home/martin/github/v4r/3rdparty" />
+            <Add directory="/home/martin/github/v4r/3rdparty/SiftGPU/src/siftgpu_external/src" />
+            <Add directory="/home/martin/github/v4r/debug" />
+            <Add directory="/home/martin/github/v4r/debug/modules/registration" />
+            <Add directory="/home/martin/github/v4r/modules/common/include" />
+            <Add directory="/home/martin/github/v4r/modules/core/include" />
+            <Add directory="/home/martin/github/v4r/modules/features/include" />
+            <Add directory="/home/martin/github/v4r/modules/io/include" />
+            <Add directory="/home/martin/github/v4r/modules/keypoints/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/atlas" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/ni" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/openni2" />
+            <Add directory="/usr/include/pcl-1.7" />
+            <Add directory="/usr/include/vtk-5.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/cuda/include" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 v4r_registration_object/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/registration/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/martin/github/v4r/modules/registration/src/FeatureBasedRegistration.cpp">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/src/MultiSessionModelling.cpp">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/src/MvLMIcp.cpp">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/src/PartialModelRegistrationBase.cpp">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/src/StablePlanesRegistration.cpp">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/src/fast_icp_with_gc.cpp">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/src/metrics.cpp">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/src/noise_model_based_cloud_integration.cpp">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/debug/v4r_config.h">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/debug/v4r_modules.h">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/include/v4r/registration/FeatureBasedRegistration.h">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/include/v4r/registration/MultiSessionModelling.h">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/include/v4r/registration/MvLMIcp.h">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/include/v4r/registration/PartialModelRegistrationBase.h">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/include/v4r/registration/StablePlanesRegistration.h">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/include/v4r/registration/fast_icp_with_gc.h">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/include/v4r/registration/impl/fast_icp_with_gc.hpp">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/include/v4r/registration/metrics.h">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/include/v4r/registration/noise_model_based_cloud_integration.h">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/include/v4r/registration/uniform_sampling.h">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RMinDepVersions.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RUtils.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RDetectCXXCompiler.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RVersion.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RCompilerOptions.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RModule.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindAssimp.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindCeres.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindLibsPerf.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RDetectCUDA.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindEigen.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindGlew.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindGLM.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindGlog.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindOpenGL.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindPCL.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindQt.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindOpenCV.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindOpenNI2.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindBoost.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindCaffe.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindEDT.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindSiftGPU.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindMETSlib.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RFindLIBSVM.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RExtraTargets.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RGenHeaders.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/V4RGenConfig.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/templates/cmake_uninstall.cmake.in">
+          <Option virtualFolder="CMake Files\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/templates/v4r_config.h.in">
+          <Option virtualFolder="CMake Files\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/templates/v4r_modules.h.in">
+          <Option virtualFolder="CMake Files\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/templates/V4RConfig.cmake.in">
+          <Option virtualFolder="CMake Files\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/templates/V4RConfig-version.cmake.in">
+          <Option virtualFolder="CMake Files\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/templates/V4RConfig.cmake.in">
+          <Option virtualFolder="CMake Files\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/cmake/templates/V4RConfig-version.cmake.in">
+          <Option virtualFolder="CMake Files\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/core/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\core\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/core/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\core\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/core/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\core\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/core/include/v4r/core/version.h">
+          <Option virtualFolder="CMake Files\modules\core\include\v4r\core\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/change_detection/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\change_detection\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/change_detection/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\change_detection\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/change_detection/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\change_detection\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/common/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\common\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/common/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\common\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/common/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\common\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/features/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\features\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/features/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\features\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/features/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\features\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/io/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\io\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/io/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\io\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/io/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\io\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/keypoints/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\keypoints\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/keypoints/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\keypoints\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/keypoints/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\keypoints\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/ml/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\ml\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/ml/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\ml\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/ml/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\ml\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/object_modelling/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\object_modelling\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/object_modelling/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\object_modelling\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/object_modelling/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\object_modelling\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/own/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\own\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/own/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\own\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/own/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\own\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/recognition/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\recognition\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/recognition/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\recognition\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/recognition/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\recognition\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/reconstruction/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\reconstruction\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/reconstruction/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\reconstruction\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/reconstruction/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\reconstruction\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\registration\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\registration\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/registration/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\registration\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/rendering/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\rendering\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/rendering/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\rendering\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/rendering/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\rendering\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/segmentation/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\segmentation\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/segmentation/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\segmentation\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/segmentation/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\segmentation\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/tracking/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\tracking\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/tracking/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\tracking\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/modules/tracking/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\modules\tracking\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/share/Ceres/CeresConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\Ceres\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/share/Ceres/CeresConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\Ceres\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/share/Ceres/FindEigen.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\Ceres\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/share/Ceres/FindGlog.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\Ceres\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/share/Ceres/CeresTargets.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\Ceres\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/share/Ceres/CeresTargets-none.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\Ceres\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/share/pcl-1.7/PCLConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\pcl-1.7\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/share/pcl-1.7/PCLConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\pcl-1.7\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/share/OpenCV/OpenCVConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/share/OpenCV/OpenCVConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/share/OpenCV/OpenCVModules.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/share/OpenCV/OpenCVModules-release.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKConfigQt.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKTargets.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKTargets-release.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/UseVTK.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKConfigQt.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/UseVTK.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKConfigQt.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/UseVTK.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/VTKConfigQt.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../../../../usr/lib/vtk-5.8/CMake/vtkMakeInstantiator.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\vtk-5.8\CMake\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../caffe/build/CaffeConfig.cmake">
+          <Option virtualFolder="CMake Files\..\caffe\build\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/../caffe/build/CaffeTargets.cmake">
+          <Option virtualFolder="CMake Files\..\caffe\build\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/3rdparty/EDT/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\3rdparty\EDT\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/3rdparty/EDT/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\3rdparty\EDT\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/3rdparty/SiftGPU/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\3rdparty\SiftGPU\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/3rdparty/SiftGPU/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\3rdparty\SiftGPU\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/3rdparty/SiftGPU/tmp/siftgpu_external-cfgcmd.txt.in">
+          <Option virtualFolder="CMake Files\3rdparty\SiftGPU\tmp\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/3rdparty/SiftGPU/tmp/siftgpu_external-cfgcmd.txt.in">
+          <Option virtualFolder="CMake Files\3rdparty\SiftGPU\tmp\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/3rdparty/metslib/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\3rdparty\metslib\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/3rdparty/metslib/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\3rdparty\metslib\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/apps/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\apps\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/apps/segmentation/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\apps\segmentation\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/apps/3D_scene_reconstruction_by_SIFT_and_MST/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\apps\3D_scene_reconstruction_by_SIFT_and_MST\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/apps/RTMT/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\apps\RTMT\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/apps/ObjectGroundTruthAnnotator/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\apps\ObjectGroundTruthAnnotator\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/samples/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\samples\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/samples/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\samples\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/samples/examples/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\samples\examples\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/samples/examples/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\samples\examples\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/samples/eval/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\samples\eval\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/samples/eval/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\samples\eval\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/samples/tools/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\samples\tools\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/samples/tools/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\samples\tools\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/samples/own/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\samples\own\" />
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/samples/own/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\samples\own\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

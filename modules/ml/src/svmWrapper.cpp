@@ -16,7 +16,7 @@ void svmClassifier::predict(const Eigen::MatrixXf &query_data, Eigen::MatrixXi &
 {
 
     if(param_.svm_.probability)
-        predicted_label.resize(query_data.rows(), param_.knn_);
+        predicted_label.resize(query_data.rows()*2, param_.knn_);
     else
         predicted_label.resize(query_data.rows(), 1);
 
@@ -34,6 +34,8 @@ void svmClassifier::predict(const Eigen::MatrixXf &query_data, Eigen::MatrixXi &
         if(param_.svm_.probability)
         {
             double *prob_estimates;
+            double prob_est[ svm_mod_->nr_class ];
+            prob_estimates = new double[ svm_mod_->nr_class ];
             try
             {
                 prob_estimates = new double[ svm_mod_->nr_class ];
@@ -50,11 +52,17 @@ void svmClassifier::predict(const Eigen::MatrixXf &query_data, Eigen::MatrixXi &
             for(int label_id=0; label_id<svm_mod_->nr_class; label_id++)
                 probs[label_id] = prob_estimates[label_id];
 
+
+
             std::vector<size_t> indices = sort_indexes(probs);  //NOTE sorted in ascending order. We want highest values!
+            double sum_of_elems = 0;
+            for(std::vector<double>::iterator it = probs.begin(); it != probs.end(); ++it)
+                sum_of_elems += *it;
 
-            for(int k=0; k<param_.knn_; k++)
-                predicted_label(i, k) = indices[ indices.size() - 1 - k ];
-
+            for(int k=0; k<param_.knn_; k++){
+                predicted_label(i*2, k) = indices[ indices.size() - 1 - k ];
+                predicted_label(i*2+1, k) = probs[indices[ indices.size() - 1 - k ]] * 1000000 / sum_of_elems;
+            }
             delete [] prob_estimates;
         }
         else
