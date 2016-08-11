@@ -29,6 +29,7 @@ if(BUILD_EXAMPLES)
   V4R_DEFINE_CPP_EXAMPLE(caffee_teach)
   #V4R_DEFINE_CPP_EXAMPLE(caffe_class)
   V4R_DEFINE_CPP_EXAMPLE(caffe_esf_class)
+V4R_DEFINE_CPP_EXAMPLE(test_data_gen)
 
 endif()
 

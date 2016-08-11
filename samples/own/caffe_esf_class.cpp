@@ -65,7 +65,7 @@ public:
 int main(int argc, char** argv){
 
 
-    po::options_description desc("Calculates one point cloud for classification\n======================================\n**Allowed options");
+    po::options_description desc("Classifies objects with ESF, AlexNet and Combination\n======================================\n**Allowed options");
     std::string path, input, pc;
     bool visualize = false;
     desc.add_options()

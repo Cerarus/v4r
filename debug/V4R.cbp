@@ -2847,6 +2847,98 @@
             <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+      <Target title="example_test_data_gen">
+         <Option output="/home/martin/github/v4r/debug/bin/example-test_data_gen" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/martin/github/v4r/debug/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DCERES_VERSION_LESS_1_9_0" />
+            <Add option="-DDISABLE_PCAP" />
+            <Add option="-DDISABLE_PNG" />
+            <Add option="-DUSE_OPENCV" />
+            <Add option="-DUSE_LMDB" />
+            <Add option="-DUSE_LEVELDB" />
+            <Add directory="/home/martin/github/v4r/3rdparty" />
+            <Add directory="/home/martin/github/v4r/debug" />
+            <Add directory="/home/martin/github/v4r/modules/common/include" />
+            <Add directory="/home/martin/github/v4r/modules/core/include" />
+            <Add directory="/home/martin/github/v4r/modules/features/include" />
+            <Add directory="/home/martin/github/v4r/modules/io/include" />
+            <Add directory="/home/martin/github/v4r/modules/keypoints/include" />
+            <Add directory="/home/martin/github/v4r/modules/ml/include" />
+            <Add directory="/home/martin/github/v4r/modules/own/include" />
+            <Add directory="/home/martin/github/v4r/modules/rendering/include" />
+            <Add directory="/home/martin/github/v4r/modules/segmentation/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/ni" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/openni2" />
+            <Add directory="/usr/include/pcl-1.7" />
+            <Add directory="/usr/include/vtk-5.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_test_data_gen" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="example_test_data_gen/fast">
+         <Option output="/home/martin/github/v4r/debug/bin/example-test_data_gen" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/martin/github/v4r/debug/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DCERES_VERSION_LESS_1_9_0" />
+            <Add option="-DDISABLE_PCAP" />
+            <Add option="-DDISABLE_PNG" />
+            <Add option="-DUSE_OPENCV" />
+            <Add option="-DUSE_LMDB" />
+            <Add option="-DUSE_LEVELDB" />
+            <Add directory="/home/martin/github/v4r/3rdparty" />
+            <Add directory="/home/martin/github/v4r/debug" />
+            <Add directory="/home/martin/github/v4r/modules/common/include" />
+            <Add directory="/home/martin/github/v4r/modules/core/include" />
+            <Add directory="/home/martin/github/v4r/modules/features/include" />
+            <Add directory="/home/martin/github/v4r/modules/io/include" />
+            <Add directory="/home/martin/github/v4r/modules/keypoints/include" />
+            <Add directory="/home/martin/github/v4r/modules/ml/include" />
+            <Add directory="/home/martin/github/v4r/modules/own/include" />
+            <Add directory="/home/martin/github/v4r/modules/rendering/include" />
+            <Add directory="/home/martin/github/v4r/modules/segmentation/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/ni" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/openni2" />
+            <Add directory="/usr/include/pcl-1.7" />
+            <Add directory="/usr/include/vtk-5.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_test_data_gen/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
       </Build>
       <Unit filename="/home/martin/github/v4r/3rdparty/EDT/propagation_distance_field.cpp">
       </Unit>
@@ -3015,6 +3107,8 @@
       <Unit filename="/home/martin/github/v4r/samples/own/esf_class_teach.cpp">
       </Unit>
       <Unit filename="/home/martin/github/v4r/samples/own/esf_gen.cpp">
+      </Unit>
+      <Unit filename="/home/martin/github/v4r/samples/own/test_data_gen.cpp">
       </Unit>
       <Unit filename="/home/martin/github/v4r/3rdparty/EDT/propagation_distance_field.h">
       </Unit>

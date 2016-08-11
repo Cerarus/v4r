@@ -1,6 +1,6 @@
 "\n"
 "General configuration for V4R 1.0.0-dev =====================================\n"
-"  Version control:               1.4.3-177-gfba3f54-dirty\n"
+"  Version control:               1.4.3-178-g7b60780-dirty\n"
 "\n"
 "  Platform:\n"
 "    Host:                        Linux 4.2.0-42-generic x86_64\n"
