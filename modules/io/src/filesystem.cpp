@@ -202,7 +202,7 @@ createDirForFileIfNotExist(const std::string & filename)
 
 
 bool
-copyDir(const std::string &src, const std::string &dst)
+copyDir(const std::string &src, const std::string &dst, const bool overwrite)
 {
     const bf::path source(src);
     const bf::path destination(dst);
@@ -216,17 +216,20 @@ copyDir(const std::string &src, const std::string &dst)
             return false;
         }
 
-        if( bf::exists(destination) )
+        if( bf::exists(destination)  )
         {
             std::cerr << "Destination directory " << destination.string() << " already exists." << std::endl;
-            return false;
+            if(!overwrite)
+                return false;
         }
-
-        // Create the destination directory
-        if( !bf::create_directory(destination) )
+        else
         {
-            std::cerr << "Unable to create destination directory"<< destination.string() << std::endl;
-            return false;
+            // Create the destination directory
+            if( !bf::create_directory(destination) )
+            {
+                std::cerr << "Unable to create destination directory"<< destination.string() << std::endl;
+                return false;
+            }
         }
     }
     catch(bf::filesystem_error const & e)
@@ -244,11 +247,14 @@ copyDir(const std::string &src, const std::string &dst)
             if(bf::is_directory(current))
             {
                 // Found directory: Recursion
-                if( !copyDir( current.string(), dst + "/" + current.filename().string() ) )
+                if( !copyDir( current.string(), dst + "/" + current.filename().string() , overwrite))
                     return false;
             }
             else // Found file: Copy
-                bf::copy_file( current.string(), dst + "/" + current.filename().string() );
+                if(overwrite)
+                    bf::copy_file( current.string(), dst + "/" + current.filename().string() ,bf::copy_option::overwrite_if_exists);
+                else
+                    bf::copy_file( current.string(), dst + "/" + current.filename().string() );
         }
         catch(bf::filesystem_error const & e)
         {

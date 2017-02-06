@@ -2,282 +2,32 @@
 <CodeBlocks_project_file>
    <FileVersion major="1" minor="6" />
    <Project>
-      <Option title="v4r_io" />
+      <Option title="libsvm" />
       <Option makefile_is_custom="1" />
       <Option compiler="gcc" />
       <Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\cmake\templates\;CMake Files\modules\;CMake Files\modules\core\;CMake Files\modules\core\include\;CMake Files\modules\core\include\v4r\;CMake Files\modules\core\include\v4r\core\;CMake Files\modules\change_detection\;CMake Files\modules\common\;CMake Files\modules\features\;CMake Files\modules\io\;CMake Files\modules\keypoints\;CMake Files\modules\ml\;CMake Files\modules\object_modelling\;CMake Files\modules\own\;CMake Files\modules\recognition\;CMake Files\modules\reconstruction\;CMake Files\modules\registration\;CMake Files\modules\rendering\;CMake Files\modules\segmentation\;CMake Files\modules\tracking\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\usr\local\share\Ceres\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\pcl\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5OpenGL\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Sql\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5WebKitWidgets\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5WebKit\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Network\;CMake Files\..\..\..\..\usr\lib\cmake\;CMake Files\..\..\..\..\usr\lib\cmake\vtk-6.2\;CMake Files\..\..\..\..\usr\lib\cmake\vtk-6.2\Modules\;CMake Files\..\..\..\..\usr\share\;CMake Files\..\..\..\..\usr\share\OpenCV\;CMake Files\..\caffe\;CMake Files\..\caffe\build\;CMake Files\3rdparty\;CMake Files\3rdparty\EDT\;CMake Files\3rdparty\SiftGPU\;CMake Files\3rdparty\SiftGPU\tmp\;CMake Files\3rdparty\metslib\;CMake Files\3rdparty\libsvm\;CMake Files\3rdparty\libsvm\tmp\;CMake Files\samples\;CMake Files\samples\examples\;CMake Files\samples\eval\;CMake Files\samples\tools\;CMake Files\samples\own\;" />
       <Build>
       <Target title="all">
-         <Option working_dir="/home/martin/github/v4r/debug/modules/io" />
+         <Option working_dir="/home/martin/github/v4r/debug/3rdparty/libsvm" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 all" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/3rdparty/libsvm/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/3rdparty/libsvm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/3rdparty/libsvm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/3rdparty/libsvm/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
-      <Target title="v4r_io">
-         <Option output="/home/martin/github/v4r/debug/lib/libv4r_io.so" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/martin/github/v4r/debug/modules/io" />
-         <Option object_output="./" />
-         <Option type="3" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add option="-DV4RAPI_EXPORTS" />
-            <Add option="-DDISABLE_PCAP" />
-            <Add option="-DDISABLE_PNG" />
-            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
-            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
-            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
-            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
-            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
-            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
-            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
-            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
-            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
-            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
-            <Add option="-DUSE_OPENCV" />
-            <Add option="-DUSE_LMDB" />
-            <Add option="-DUSE_LEVELDB" />
-            <Add option="-D__V4R_BUILD=1" />
-            <Add directory="/home/martin/github/v4r/debug" />
-            <Add directory="/home/martin/github/v4r/debug/modules/io" />
-            <Add directory="/home/martin/github/v4r/modules/core/include" />
-            <Add directory="/home/martin/github/v4r/modules/io/include" />
-            <Add directory="/home/martin/github/v4r/modules/io/src" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/4.8" />
-            <Add directory="/usr/include/c++/4.8/backward" />
-            <Add directory="/usr/include/eigen3" />
-            <Add directory="/usr/include/freetype2" />
-            <Add directory="/usr/include/hdf5/serial" />
-            <Add directory="/usr/include/jsoncpp" />
-            <Add directory="/usr/include/libxml2" />
-            <Add directory="/usr/include/opencv" />
-            <Add directory="/usr/include/python2.7" />
-            <Add directory="/usr/include/tcl" />
-            <Add directory="/usr/include/vtk-6.2" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
-            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
-            <Add directory="/usr/lib/openmpi/include" />
-            <Add directory="/usr/lib/openmpi/include/openmpi" />
-            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
-            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
+      <Target title="libsvm_external">
+         <Option working_dir="/home/martin/github/v4r/debug/3rdparty/libsvm" />
+         <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 v4r_io" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="v4r_io/fast">
-         <Option output="/home/martin/github/v4r/debug/lib/libv4r_io.so" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/martin/github/v4r/debug/modules/io" />
-         <Option object_output="./" />
-         <Option type="3" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add option="-DV4RAPI_EXPORTS" />
-            <Add option="-DDISABLE_PCAP" />
-            <Add option="-DDISABLE_PNG" />
-            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
-            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
-            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
-            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
-            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
-            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
-            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
-            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
-            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
-            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
-            <Add option="-DUSE_OPENCV" />
-            <Add option="-DUSE_LMDB" />
-            <Add option="-DUSE_LEVELDB" />
-            <Add option="-D__V4R_BUILD=1" />
-            <Add directory="/home/martin/github/v4r/debug" />
-            <Add directory="/home/martin/github/v4r/debug/modules/io" />
-            <Add directory="/home/martin/github/v4r/modules/core/include" />
-            <Add directory="/home/martin/github/v4r/modules/io/include" />
-            <Add directory="/home/martin/github/v4r/modules/io/src" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/4.8" />
-            <Add directory="/usr/include/c++/4.8/backward" />
-            <Add directory="/usr/include/eigen3" />
-            <Add directory="/usr/include/freetype2" />
-            <Add directory="/usr/include/hdf5/serial" />
-            <Add directory="/usr/include/jsoncpp" />
-            <Add directory="/usr/include/libxml2" />
-            <Add directory="/usr/include/opencv" />
-            <Add directory="/usr/include/python2.7" />
-            <Add directory="/usr/include/tcl" />
-            <Add directory="/usr/include/vtk-6.2" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
-            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
-            <Add directory="/usr/lib/openmpi/include" />
-            <Add directory="/usr/lib/openmpi/include/openmpi" />
-            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
-            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 v4r_io/fast" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="v4r_io_object">
-         <Option output="/home/martin/github/v4r/debug/modules/io/CMakeFiles/v4r_io_object.dir/v4r_io_object.objlib" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/martin/github/v4r/debug/modules/io" />
-         <Option object_output="./" />
-         <Option type="2" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add option="-DV4RAPI_EXPORTS" />
-            <Add option="-DDISABLE_PCAP" />
-            <Add option="-DDISABLE_PNG" />
-            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
-            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
-            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
-            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
-            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
-            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
-            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
-            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
-            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
-            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
-            <Add option="-DUSE_OPENCV" />
-            <Add option="-DUSE_LMDB" />
-            <Add option="-DUSE_LEVELDB" />
-            <Add option="-D__V4R_BUILD=1" />
-            <Add directory="/home/martin/github/v4r/debug" />
-            <Add directory="/home/martin/github/v4r/debug/modules/io" />
-            <Add directory="/home/martin/github/v4r/modules/core/include" />
-            <Add directory="/home/martin/github/v4r/modules/io/include" />
-            <Add directory="/home/martin/github/v4r/modules/io/src" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/4.8" />
-            <Add directory="/usr/include/c++/4.8/backward" />
-            <Add directory="/usr/include/eigen3" />
-            <Add directory="/usr/include/freetype2" />
-            <Add directory="/usr/include/hdf5/serial" />
-            <Add directory="/usr/include/jsoncpp" />
-            <Add directory="/usr/include/libxml2" />
-            <Add directory="/usr/include/opencv" />
-            <Add directory="/usr/include/python2.7" />
-            <Add directory="/usr/include/tcl" />
-            <Add directory="/usr/include/vtk-6.2" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
-            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
-            <Add directory="/usr/lib/openmpi/include" />
-            <Add directory="/usr/lib/openmpi/include/openmpi" />
-            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
-            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 v4r_io_object" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="v4r_io_object/fast">
-         <Option output="/home/martin/github/v4r/debug/modules/io/CMakeFiles/v4r_io_object.dir/v4r_io_object.objlib" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/martin/github/v4r/debug/modules/io" />
-         <Option object_output="./" />
-         <Option type="2" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add option="-DV4RAPI_EXPORTS" />
-            <Add option="-DDISABLE_PCAP" />
-            <Add option="-DDISABLE_PNG" />
-            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
-            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
-            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
-            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
-            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
-            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
-            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
-            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
-            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
-            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
-            <Add option="-DUSE_OPENCV" />
-            <Add option="-DUSE_LMDB" />
-            <Add option="-DUSE_LEVELDB" />
-            <Add option="-D__V4R_BUILD=1" />
-            <Add directory="/home/martin/github/v4r/debug" />
-            <Add directory="/home/martin/github/v4r/debug/modules/io" />
-            <Add directory="/home/martin/github/v4r/modules/core/include" />
-            <Add directory="/home/martin/github/v4r/modules/io/include" />
-            <Add directory="/home/martin/github/v4r/modules/io/src" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/4.8" />
-            <Add directory="/usr/include/c++/4.8/backward" />
-            <Add directory="/usr/include/eigen3" />
-            <Add directory="/usr/include/freetype2" />
-            <Add directory="/usr/include/hdf5/serial" />
-            <Add directory="/usr/include/jsoncpp" />
-            <Add directory="/usr/include/libxml2" />
-            <Add directory="/usr/include/opencv" />
-            <Add directory="/usr/include/python2.7" />
-            <Add directory="/usr/include/tcl" />
-            <Add directory="/usr/include/vtk-6.2" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
-            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
-            <Add directory="/usr/lib/openmpi/include" />
-            <Add directory="/usr/lib/openmpi/include/openmpi" />
-            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
-            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 v4r_io_object/fast" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/modules/io/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/3rdparty/libsvm/Makefile&quot;  VERBOSE=1 libsvm_external" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/3rdparty/libsvm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/3rdparty/libsvm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/3rdparty/libsvm/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       </Build>
-      <Unit filename="/home/martin/github/v4r/debug/v4r_config.h">
-         <Option target="v4r_io"/>
-         <Option target="v4r_io_object"/>
-      </Unit>
-      <Unit filename="/home/martin/github/v4r/debug/v4r_modules.h">
-         <Option target="v4r_io"/>
-         <Option target="v4r_io_object"/>
-      </Unit>
-      <Unit filename="/home/martin/github/v4r/modules/io/include/v4r/io/eigen.h">
-         <Option target="v4r_io"/>
-         <Option target="v4r_io_object"/>
-      </Unit>
-      <Unit filename="/home/martin/github/v4r/modules/io/include/v4r/io/filesystem.h">
-         <Option target="v4r_io"/>
-         <Option target="v4r_io_object"/>
-      </Unit>
-      <Unit filename="/home/martin/github/v4r/modules/io/src/eigen.cpp">
-         <Option target="v4r_io"/>
-         <Option target="v4r_io_object"/>
-      </Unit>
-      <Unit filename="/home/martin/github/v4r/modules/io/src/filesystem.cpp">
-         <Option target="v4r_io"/>
-         <Option target="v4r_io_object"/>
-      </Unit>
       <Unit filename="/home/martin/github/v4r/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
       </Unit>

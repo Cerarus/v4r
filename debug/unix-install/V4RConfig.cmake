@@ -67,7 +67,7 @@ endif()
 set(V4R_COMPUTE_CAPABILITIES -gencode;arch=compute_11,code=sm_11;-gencode;arch=compute_12,code=sm_12;-gencode;arch=compute_13,code=sm_13;-gencode;arch=compute_20,code=sm_20;-gencode;arch=compute_20,code=sm_21;-gencode;arch=compute_30,code=sm_30;-gencode;arch=compute_35,code=sm_35;-gencode;arch=compute_30,code=compute_30)
 
 set(V4R_CUDA_VERSION 5.5)
-set(V4R_USE_CUBLAS   )
+set(V4R_USE_CUBLAS   1)
 set(V4R_USE_CUFFT    1)
 set(V4R_USE_NVCUVID  )
 
@@ -118,7 +118,7 @@ SET(V4R_VERSION_STATUS "-dev")
 # Link libraries: e.g. v4r_common;v4r_recognition; etc...
 # ====================================================================
 
-SET(V4R_LIB_COMPONENTS v4r_segmentation;v4r_rendering;v4r_own;v4r_ml;v4r_keypoints;v4r_io;v4r_features;v4r_core;v4r_common;v4r_change_detection)
+SET(V4R_LIB_COMPONENTS v4r_segmentation;v4r_rendering;v4r_registration;v4r_reconstruction;v4r_recognition;v4r_own;v4r_object_modelling;v4r_ml;v4r_keypoints;v4r_io;v4r_features;v4r_core;v4r_common;v4r_change_detection)
 
 # ==============================================================
 #  Extra include directories, needed by V4R new structure

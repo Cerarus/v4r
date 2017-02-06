@@ -167,9 +167,10 @@ int main(int argc, char** argv)
         v4r::io::writeLabelToFile(f_file.append("svm/Labels.txt"),models);
     }
     else{
+        std::cout << "Loading Descriptors and Labels from '" << path << "svm'." <<std::endl;
         all_model_signatures_ = v4r::io::readDescrFromFile(path+"svm/Signatures.txt",0,4096);
         models = v4r::io::readLabelFromFile(path+"svm/Labels.txt",0);
-        std::cout << "Loading Descriptors and Labels from " << path << "svm." <<std::endl;
+
     }
 
 
@@ -177,7 +178,7 @@ int main(int argc, char** argv)
     fs = path;
     fs.append("svm/Class.model");
     classifier.setOutFilename(fs);
-
+    classifier.setInFilename("/media/martin/Diplomarbeit_Dat/nothing.c");
     //test.resize(all_model_signatures_.cols(),all_model_signatures_.rows());
     //test = all_model_signatures_.transpose();
     //classifier.shuffleTrainingData(all_model_signatures_, models);
