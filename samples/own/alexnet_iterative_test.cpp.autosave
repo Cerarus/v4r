@@ -1,0 +1,11 @@
+#include "/home/martin/github/caffe/include/caffe/solver.hpp"
+//#include <caffe/solver.hpp>
+
+caffe::Solver::
+
+
+int main(int argc, char** argv){
+
+
+
+}

@@ -30,6 +30,9 @@ if(BUILD_EXAMPLES)
   #V4R_DEFINE_CPP_EXAMPLE(caffe_class)
   V4R_DEFINE_CPP_EXAMPLE(caffe_esf_class)
 V4R_DEFINE_CPP_EXAMPLE(test_data_gen)
+V4R_DEFINE_CPP_EXAMPLE(alexnet_iterative_test)
+V4R_DEFINE_CPP_EXAMPLE(create_caffe_list)
+V4R_DEFINE_CPP_EXAMPLE(train_data_gen)
 
 endif()
 
