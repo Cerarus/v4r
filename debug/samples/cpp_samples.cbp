@@ -633,47 +633,84 @@
             <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       <Target title="example_alexnet_iterative_test">
          <Option output="/home/martin/github/v4r/debug/bin/example-alexnet_iterative_test" prefix_auto="0" extension_auto="0" />
+=======
+      <Target title="example_classify_with_RF">
+         <Option output="/home/martin/github/v4r/debug/bin/example-classify_with_RF" prefix_auto="0" extension_auto="0" />
+>>>>>>> iterativ_v1
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
-            <Add option="-DCERES_VERSION_LESS_1_9_0" />
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
+            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
+            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
+            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
+            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
+            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
+            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
+            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
+            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
+            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
+            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
             <Add option="-DUSE_OPENCV" />
             <Add option="-DUSE_LMDB" />
             <Add option="-DUSE_LEVELDB" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
             <Add directory="/home/martin/github/v4r/3rdparty" />
             <Add directory="/home/martin/github/v4r/debug" />
+            <Add directory="/home/martin/github/v4r/modules/change_detection/include" />
             <Add directory="/home/martin/github/v4r/modules/common/include" />
             <Add directory="/home/martin/github/v4r/modules/core/include" />
             <Add directory="/home/martin/github/v4r/modules/features/include" />
             <Add directory="/home/martin/github/v4r/modules/io/include" />
             <Add directory="/home/martin/github/v4r/modules/keypoints/include" />
             <Add directory="/home/martin/github/v4r/modules/ml/include" />
-            <Add directory="/home/martin/github/v4r/modules/own/include" />
+            <Add directory="/home/martin/github/v4r/modules/object_modelling/include" />
+            <Add directory="/home/martin/github/v4r/modules/recognition/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/include" />
             <Add directory="/home/martin/github/v4r/modules/rendering/include" />
             <Add directory="/home/martin/github/v4r/modules/segmentation/include" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/4.8" />
             <Add directory="/usr/include/c++/4.8/backward" />
             <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/freetype2" />
+            <Add directory="/usr/include/hdf5/serial" />
+            <Add directory="/usr/include/jsoncpp" />
+            <Add directory="/usr/include/libxml2" />
             <Add directory="/usr/include/ni" />
             <Add directory="/usr/include/opencv" />
             <Add directory="/usr/include/openni2" />
             <Add directory="/usr/include/pcl-1.7" />
-            <Add directory="/usr/include/vtk-5.8" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/include/tcl" />
+            <Add directory="/usr/include/vtk-6.2" />
             <Add directory="/usr/include/x86_64-linux-gnu" />
             <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/lib/openmpi/include" />
+            <Add directory="/usr/lib/openmpi/include/openmpi" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
+<<<<<<< HEAD
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_alexnet_iterative_test" />
             <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
@@ -682,44 +719,86 @@
       </Target>
       <Target title="example_alexnet_iterative_test/fast">
          <Option output="/home/martin/github/v4r/debug/bin/example-alexnet_iterative_test" prefix_auto="0" extension_auto="0" />
+=======
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 example_classify_with_RF" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="example_classify_with_RF/fast">
+         <Option output="/home/martin/github/v4r/debug/bin/example-classify_with_RF" prefix_auto="0" extension_auto="0" />
+>>>>>>> iterativ_v1
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
-            <Add option="-DCERES_VERSION_LESS_1_9_0" />
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
+            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
+            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
+            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
+            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
+            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
+            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
+            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
+            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
+            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
+            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
             <Add option="-DUSE_OPENCV" />
             <Add option="-DUSE_LMDB" />
             <Add option="-DUSE_LEVELDB" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
             <Add directory="/home/martin/github/v4r/3rdparty" />
             <Add directory="/home/martin/github/v4r/debug" />
+            <Add directory="/home/martin/github/v4r/modules/change_detection/include" />
             <Add directory="/home/martin/github/v4r/modules/common/include" />
             <Add directory="/home/martin/github/v4r/modules/core/include" />
             <Add directory="/home/martin/github/v4r/modules/features/include" />
             <Add directory="/home/martin/github/v4r/modules/io/include" />
             <Add directory="/home/martin/github/v4r/modules/keypoints/include" />
             <Add directory="/home/martin/github/v4r/modules/ml/include" />
-            <Add directory="/home/martin/github/v4r/modules/own/include" />
+            <Add directory="/home/martin/github/v4r/modules/object_modelling/include" />
+            <Add directory="/home/martin/github/v4r/modules/recognition/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/include" />
             <Add directory="/home/martin/github/v4r/modules/rendering/include" />
             <Add directory="/home/martin/github/v4r/modules/segmentation/include" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/4.8" />
             <Add directory="/usr/include/c++/4.8/backward" />
             <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/freetype2" />
+            <Add directory="/usr/include/hdf5/serial" />
+            <Add directory="/usr/include/jsoncpp" />
+            <Add directory="/usr/include/libxml2" />
             <Add directory="/usr/include/ni" />
             <Add directory="/usr/include/opencv" />
             <Add directory="/usr/include/openni2" />
             <Add directory="/usr/include/pcl-1.7" />
-            <Add directory="/usr/include/vtk-5.8" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/include/tcl" />
+            <Add directory="/usr/include/vtk-6.2" />
             <Add directory="/usr/include/x86_64-linux-gnu" />
             <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/lib/openmpi/include" />
+            <Add directory="/usr/lib/openmpi/include/openmpi" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
+<<<<<<< HEAD
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_alexnet_iterative_test/fast" />
             <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
@@ -736,44 +815,86 @@
       <Target title="example_alexnet_iterative_test">
          <Option output="/home/martin/github/v4r/debug/bin/example-alexnet_iterative_test" prefix_auto="0" extension_auto="0" />
 >>>>>>> Stashed changes
+=======
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 example_classify_with_RF/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="example_incremental_object_learning">
+         <Option output="/home/martin/github/v4r/debug/bin/example-incremental_object_learning" prefix_auto="0" extension_auto="0" />
+>>>>>>> iterativ_v1
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
-            <Add option="-DCERES_VERSION_LESS_1_9_0" />
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
+            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
+            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
+            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
+            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
+            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
+            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
+            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
+            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
+            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
+            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
             <Add option="-DUSE_OPENCV" />
             <Add option="-DUSE_LMDB" />
             <Add option="-DUSE_LEVELDB" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
             <Add directory="/home/martin/github/v4r/3rdparty" />
             <Add directory="/home/martin/github/v4r/debug" />
+            <Add directory="/home/martin/github/v4r/modules/change_detection/include" />
             <Add directory="/home/martin/github/v4r/modules/common/include" />
             <Add directory="/home/martin/github/v4r/modules/core/include" />
             <Add directory="/home/martin/github/v4r/modules/features/include" />
             <Add directory="/home/martin/github/v4r/modules/io/include" />
             <Add directory="/home/martin/github/v4r/modules/keypoints/include" />
             <Add directory="/home/martin/github/v4r/modules/ml/include" />
-            <Add directory="/home/martin/github/v4r/modules/own/include" />
+            <Add directory="/home/martin/github/v4r/modules/object_modelling/include" />
+            <Add directory="/home/martin/github/v4r/modules/recognition/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/include" />
             <Add directory="/home/martin/github/v4r/modules/rendering/include" />
             <Add directory="/home/martin/github/v4r/modules/segmentation/include" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/4.8" />
             <Add directory="/usr/include/c++/4.8/backward" />
             <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/freetype2" />
+            <Add directory="/usr/include/hdf5/serial" />
+            <Add directory="/usr/include/jsoncpp" />
+            <Add directory="/usr/include/libxml2" />
             <Add directory="/usr/include/ni" />
             <Add directory="/usr/include/opencv" />
             <Add directory="/usr/include/openni2" />
             <Add directory="/usr/include/pcl-1.7" />
-            <Add directory="/usr/include/vtk-5.8" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/include/tcl" />
+            <Add directory="/usr/include/vtk-6.2" />
             <Add directory="/usr/include/x86_64-linux-gnu" />
             <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/lib/openmpi/include" />
+            <Add directory="/usr/lib/openmpi/include/openmpi" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
+<<<<<<< HEAD
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_alexnet_iterative_test" />
             <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
@@ -782,44 +903,86 @@
       </Target>
       <Target title="example_alexnet_iterative_test/fast">
          <Option output="/home/martin/github/v4r/debug/bin/example-alexnet_iterative_test" prefix_auto="0" extension_auto="0" />
+=======
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 example_incremental_object_learning" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="example_incremental_object_learning/fast">
+         <Option output="/home/martin/github/v4r/debug/bin/example-incremental_object_learning" prefix_auto="0" extension_auto="0" />
+>>>>>>> iterativ_v1
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
-            <Add option="-DCERES_VERSION_LESS_1_9_0" />
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
+            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
+            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
+            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
+            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
+            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
+            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
+            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
+            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
+            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
+            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
             <Add option="-DUSE_OPENCV" />
             <Add option="-DUSE_LMDB" />
             <Add option="-DUSE_LEVELDB" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
             <Add directory="/home/martin/github/v4r/3rdparty" />
             <Add directory="/home/martin/github/v4r/debug" />
+            <Add directory="/home/martin/github/v4r/modules/change_detection/include" />
             <Add directory="/home/martin/github/v4r/modules/common/include" />
             <Add directory="/home/martin/github/v4r/modules/core/include" />
             <Add directory="/home/martin/github/v4r/modules/features/include" />
             <Add directory="/home/martin/github/v4r/modules/io/include" />
             <Add directory="/home/martin/github/v4r/modules/keypoints/include" />
             <Add directory="/home/martin/github/v4r/modules/ml/include" />
-            <Add directory="/home/martin/github/v4r/modules/own/include" />
+            <Add directory="/home/martin/github/v4r/modules/object_modelling/include" />
+            <Add directory="/home/martin/github/v4r/modules/recognition/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/include" />
             <Add directory="/home/martin/github/v4r/modules/rendering/include" />
             <Add directory="/home/martin/github/v4r/modules/segmentation/include" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/4.8" />
             <Add directory="/usr/include/c++/4.8/backward" />
             <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/freetype2" />
+            <Add directory="/usr/include/hdf5/serial" />
+            <Add directory="/usr/include/jsoncpp" />
+            <Add directory="/usr/include/libxml2" />
             <Add directory="/usr/include/ni" />
             <Add directory="/usr/include/opencv" />
             <Add directory="/usr/include/openni2" />
             <Add directory="/usr/include/pcl-1.7" />
-            <Add directory="/usr/include/vtk-5.8" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/include/tcl" />
+            <Add directory="/usr/include/vtk-6.2" />
             <Add directory="/usr/include/x86_64-linux-gnu" />
             <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/lib/openmpi/include" />
+            <Add directory="/usr/lib/openmpi/include/openmpi" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
+<<<<<<< HEAD
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_alexnet_iterative_test/fast" />
             <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
@@ -829,6 +992,16 @@
       <Target title="example_caffe_esf_class">
          <Option output="/home/martin/github/v4r/debug/bin/example-caffe_esf_class" prefix_auto="0" extension_auto="0" />
 >>>>>>> alexnet_test
+=======
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 example_incremental_object_learning/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="example_object_recognizer">
+         <Option output="/home/martin/github/v4r/debug/bin/example-object_recognizer" prefix_auto="0" extension_auto="0" />
+>>>>>>> iterativ_v1
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
          <Option object_output="./" />
          <Option type="1" />
@@ -898,14 +1071,23 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
+<<<<<<< HEAD
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 example_classify_with_RF" />
+=======
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 example_object_recognizer" />
+>>>>>>> iterativ_v1
             <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+<<<<<<< HEAD
       <Target title="example_classify_with_RF/fast">
          <Option output="/home/martin/github/v4r/debug/bin/example-classify_with_RF" prefix_auto="0" extension_auto="0" />
+=======
+      <Target title="example_object_recognizer/fast">
+         <Option output="/home/martin/github/v4r/debug/bin/example-object_recognizer" prefix_auto="0" extension_auto="0" />
+>>>>>>> iterativ_v1
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
          <Option object_output="./" />
          <Option type="1" />
@@ -975,14 +1157,22 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
+<<<<<<< HEAD
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 example_classify_with_RF/fast" />
+=======
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 example_object_recognizer/fast" />
+>>>>>>> iterativ_v1
             <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+<<<<<<< HEAD
       <Target title="example_incremental_object_learning">
          <Option output="/home/martin/github/v4r/debug/bin/example-incremental_object_learning" prefix_auto="0" extension_auto="0" />
+=======
+      <Target title="example_segment_pcd">
+         <Option output="/home/martin/github/v4r/debug/bin/example-segment_pcd" prefix_auto="0" extension_auto="0" />
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
          <Option object_output="./" />
          <Option type="1" />
@@ -1052,6 +1242,162 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 example_segment_pcd" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="example_segment_pcd/fast">
+         <Option output="/home/martin/github/v4r/debug/bin/example-segment_pcd" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/martin/github/v4r/debug/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DDISABLE_PCAP" />
+            <Add option="-DDISABLE_PNG" />
+            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
+            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
+            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
+            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
+            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
+            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
+            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
+            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
+            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
+            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
+            <Add option="-DUSE_OPENCV" />
+            <Add option="-DUSE_LMDB" />
+            <Add option="-DUSE_LEVELDB" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
+            <Add directory="/home/martin/github/v4r/3rdparty" />
+            <Add directory="/home/martin/github/v4r/debug" />
+            <Add directory="/home/martin/github/v4r/modules/change_detection/include" />
+            <Add directory="/home/martin/github/v4r/modules/common/include" />
+            <Add directory="/home/martin/github/v4r/modules/core/include" />
+            <Add directory="/home/martin/github/v4r/modules/features/include" />
+            <Add directory="/home/martin/github/v4r/modules/io/include" />
+            <Add directory="/home/martin/github/v4r/modules/keypoints/include" />
+            <Add directory="/home/martin/github/v4r/modules/ml/include" />
+            <Add directory="/home/martin/github/v4r/modules/object_modelling/include" />
+            <Add directory="/home/martin/github/v4r/modules/recognition/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/include" />
+            <Add directory="/home/martin/github/v4r/modules/rendering/include" />
+            <Add directory="/home/martin/github/v4r/modules/segmentation/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/freetype2" />
+            <Add directory="/usr/include/hdf5/serial" />
+            <Add directory="/usr/include/jsoncpp" />
+            <Add directory="/usr/include/libxml2" />
+            <Add directory="/usr/include/ni" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/openni2" />
+            <Add directory="/usr/include/pcl-1.7" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/include/tcl" />
+            <Add directory="/usr/include/vtk-6.2" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/lib/openmpi/include" />
+            <Add directory="/usr/lib/openmpi/include/openmpi" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 example_segment_pcd/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="example_caffe_iterativ_v1">
+         <Option output="/home/martin/github/v4r/debug/bin/example-caffe_iterativ_v1" prefix_auto="0" extension_auto="0" />
+>>>>>>> iterativ_v1
+         <Option working_dir="/home/martin/github/v4r/debug/bin" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DDISABLE_PCAP" />
+            <Add option="-DDISABLE_PNG" />
+            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
+            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
+            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
+            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
+            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
+            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
+            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
+            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
+            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
+            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
+            <Add option="-DUSE_OPENCV" />
+            <Add option="-DUSE_LMDB" />
+            <Add option="-DUSE_LEVELDB" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
+            <Add directory="/home/martin/github/v4r/3rdparty" />
+            <Add directory="/home/martin/github/v4r/debug" />
+            <Add directory="/home/martin/github/v4r/modules/change_detection/include" />
+            <Add directory="/home/martin/github/v4r/modules/common/include" />
+            <Add directory="/home/martin/github/v4r/modules/core/include" />
+            <Add directory="/home/martin/github/v4r/modules/features/include" />
+            <Add directory="/home/martin/github/v4r/modules/io/include" />
+            <Add directory="/home/martin/github/v4r/modules/keypoints/include" />
+            <Add directory="/home/martin/github/v4r/modules/ml/include" />
+            <Add directory="/home/martin/github/v4r/modules/object_modelling/include" />
+            <Add directory="/home/martin/github/v4r/modules/recognition/include" />
+            <Add directory="/home/martin/github/v4r/modules/registration/include" />
+            <Add directory="/home/martin/github/v4r/modules/rendering/include" />
+            <Add directory="/home/martin/github/v4r/modules/segmentation/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/freetype2" />
+            <Add directory="/usr/include/hdf5/serial" />
+            <Add directory="/usr/include/jsoncpp" />
+            <Add directory="/usr/include/libxml2" />
+            <Add directory="/usr/include/ni" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/openni2" />
+            <Add directory="/usr/include/pcl-1.7" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/include/tcl" />
+            <Add directory="/usr/include/vtk-6.2" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/lib/openmpi/include" />
+            <Add directory="/usr/lib/openmpi/include/openmpi" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+<<<<<<< HEAD
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 example_incremental_object_learning" />
             <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
@@ -1060,6 +1406,16 @@
       </Target>
       <Target title="example_incremental_object_learning/fast">
          <Option output="/home/martin/github/v4r/debug/bin/example-incremental_object_learning" prefix_auto="0" extension_auto="0" />
+=======
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_caffe_iterativ_v1" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="example_caffe_iterativ_v1/fast">
+         <Option output="/home/martin/github/v4r/debug/bin/example-caffe_iterativ_v1" prefix_auto="0" extension_auto="0" />
+>>>>>>> iterativ_v1
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
          <Option object_output="./" />
          <Option type="1" />
@@ -1129,6 +1485,7 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
+<<<<<<< HEAD
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 example_incremental_object_learning/fast" />
             <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/examples/Makefile&quot;  VERBOSE=1 clean" />
@@ -1136,6 +1493,14 @@
          </MakeCommands>
       </Target>
 <<<<<<< Updated upstream
+=======
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_caffe_iterativ_v1/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+>>>>>>> iterativ_v1
       <Target title="example_create_caffe_list">
          <Option output="/home/martin/github/v4r/debug/bin/example-create_caffe_list" prefix_auto="0" extension_auto="0" />
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
@@ -1143,12 +1508,24 @@
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
-            <Add option="-DCERES_VERSION_LESS_1_9_0" />
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
+            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
+            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
+            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
+            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
+            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
+            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
+            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
+            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
+            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
+            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
             <Add option="-DUSE_OPENCV" />
             <Add option="-DUSE_LMDB" />
             <Add option="-DUSE_LEVELDB" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
             <Add directory="/home/martin/github/v4r/3rdparty" />
             <Add directory="/home/martin/github/v4r/debug" />
             <Add directory="/home/martin/github/v4r/modules/common/include" />
@@ -1164,15 +1541,31 @@
             <Add directory="/usr/include/c++/4.8" />
             <Add directory="/usr/include/c++/4.8/backward" />
             <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/freetype2" />
+            <Add directory="/usr/include/hdf5/serial" />
+            <Add directory="/usr/include/jsoncpp" />
+            <Add directory="/usr/include/libxml2" />
             <Add directory="/usr/include/ni" />
             <Add directory="/usr/include/opencv" />
             <Add directory="/usr/include/openni2" />
             <Add directory="/usr/include/pcl-1.7" />
-            <Add directory="/usr/include/vtk-5.8" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/include/tcl" />
+            <Add directory="/usr/include/vtk-6.2" />
             <Add directory="/usr/include/x86_64-linux-gnu" />
             <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/lib/openmpi/include" />
+            <Add directory="/usr/lib/openmpi/include/openmpi" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
@@ -1189,12 +1582,24 @@
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
-            <Add option="-DCERES_VERSION_LESS_1_9_0" />
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
+            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
+            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
+            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
+            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
+            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
+            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
+            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
+            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
+            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
+            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
             <Add option="-DUSE_OPENCV" />
             <Add option="-DUSE_LMDB" />
             <Add option="-DUSE_LEVELDB" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
             <Add directory="/home/martin/github/v4r/3rdparty" />
             <Add directory="/home/martin/github/v4r/debug" />
             <Add directory="/home/martin/github/v4r/modules/common/include" />
@@ -1210,15 +1615,31 @@
             <Add directory="/usr/include/c++/4.8" />
             <Add directory="/usr/include/c++/4.8/backward" />
             <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/freetype2" />
+            <Add directory="/usr/include/hdf5/serial" />
+            <Add directory="/usr/include/jsoncpp" />
+            <Add directory="/usr/include/libxml2" />
             <Add directory="/usr/include/ni" />
             <Add directory="/usr/include/opencv" />
             <Add directory="/usr/include/openni2" />
             <Add directory="/usr/include/pcl-1.7" />
-            <Add directory="/usr/include/vtk-5.8" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/include/tcl" />
+            <Add directory="/usr/include/vtk-6.2" />
             <Add directory="/usr/include/x86_64-linux-gnu" />
             <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/lib/openmpi/include" />
+            <Add directory="/usr/lib/openmpi/include/openmpi" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
@@ -1399,6 +1820,7 @@
          <Option compiler="gcc" />
          <Compiler>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
             <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
@@ -1422,11 +1844,26 @@
             <Add directory="/home/martin/github/v4r/modules/change_detection/include" />
 =======
             <Add option="-DCERES_VERSION_LESS_1_9_0" />
+=======
+>>>>>>> iterativ_v1
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
+            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
+            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
+            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
+            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
+            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
+            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
+            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
+            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
+            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
+            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
             <Add option="-DUSE_OPENCV" />
             <Add option="-DUSE_LMDB" />
             <Add option="-DUSE_LEVELDB" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
             <Add directory="/home/martin/github/v4r/3rdparty" />
             <Add directory="/home/martin/github/v4r/debug" />
 >>>>>>> alexnet_test
@@ -1450,16 +1887,23 @@
             <Add directory="/usr/include/c++/4.8/backward" />
             <Add directory="/usr/include/eigen3" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> iterativ_v1
             <Add directory="/usr/include/freetype2" />
             <Add directory="/usr/include/hdf5/serial" />
             <Add directory="/usr/include/jsoncpp" />
             <Add directory="/usr/include/libxml2" />
+<<<<<<< HEAD
 =======
 >>>>>>> alexnet_test
+=======
+>>>>>>> iterativ_v1
             <Add directory="/usr/include/ni" />
             <Add directory="/usr/include/opencv" />
             <Add directory="/usr/include/openni2" />
             <Add directory="/usr/include/pcl-1.7" />
+<<<<<<< HEAD
 <<<<<<< HEAD
             <Add directory="/usr/include/python2.7" />
             <Add directory="/usr/include/tcl" />
@@ -1491,10 +1935,25 @@
          <Option output="/home/martin/github/v4r/debug/bin/example-segment_pcd" prefix_auto="0" extension_auto="0" />
 =======
             <Add directory="/usr/include/vtk-5.8" />
+=======
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/include/tcl" />
+            <Add directory="/usr/include/vtk-6.2" />
+>>>>>>> iterativ_v1
             <Add directory="/usr/include/x86_64-linux-gnu" />
             <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/lib/openmpi/include" />
+            <Add directory="/usr/lib/openmpi/include/openmpi" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
@@ -1504,14 +1963,20 @@
             <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+<<<<<<< HEAD
       <Target title="example_create_caffe_list/fast">
          <Option output="/home/martin/github/v4r/debug/bin/example-create_caffe_list" prefix_auto="0" extension_auto="0" />
 >>>>>>> alexnet_test
+=======
+      <Target title="example_esf_class_teach">
+         <Option output="/home/martin/github/v4r/debug/bin/example-esf_class_teach" prefix_auto="0" extension_auto="0" />
+>>>>>>> iterativ_v1
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
+<<<<<<< HEAD
 <<<<<<< HEAD
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
@@ -1536,11 +2001,26 @@
             <Add directory="/home/martin/github/v4r/modules/change_detection/include" />
 =======
             <Add option="-DCERES_VERSION_LESS_1_9_0" />
+=======
+>>>>>>> iterativ_v1
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
+            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
+            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
+            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
+            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
+            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
+            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
+            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
+            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
+            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
+            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
             <Add option="-DUSE_OPENCV" />
             <Add option="-DUSE_LMDB" />
             <Add option="-DUSE_LEVELDB" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
             <Add directory="/home/martin/github/v4r/3rdparty" />
             <Add directory="/home/martin/github/v4r/debug" />
 >>>>>>> alexnet_test
@@ -1564,16 +2044,23 @@
             <Add directory="/usr/include/c++/4.8/backward" />
             <Add directory="/usr/include/eigen3" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> iterativ_v1
             <Add directory="/usr/include/freetype2" />
             <Add directory="/usr/include/hdf5/serial" />
             <Add directory="/usr/include/jsoncpp" />
             <Add directory="/usr/include/libxml2" />
+<<<<<<< HEAD
 =======
 >>>>>>> alexnet_test
+=======
+>>>>>>> iterativ_v1
             <Add directory="/usr/include/ni" />
             <Add directory="/usr/include/opencv" />
             <Add directory="/usr/include/openni2" />
             <Add directory="/usr/include/pcl-1.7" />
+<<<<<<< HEAD
 <<<<<<< HEAD
             <Add directory="/usr/include/python2.7" />
             <Add directory="/usr/include/tcl" />
@@ -1605,22 +2092,46 @@
          <Option output="/home/martin/github/v4r/debug/bin/example-caffe_iterativ_v1" prefix_auto="0" extension_auto="0" />
 =======
             <Add directory="/usr/include/vtk-5.8" />
+=======
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/include/tcl" />
+            <Add directory="/usr/include/vtk-6.2" />
+>>>>>>> iterativ_v1
             <Add directory="/usr/include/x86_64-linux-gnu" />
             <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/include/x86_64-linux-gnu/freetype2" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
             <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/lib/openmpi/include" />
+            <Add directory="/usr/lib/openmpi/include/openmpi" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
+<<<<<<< HEAD
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_create_caffe_list/fast" />
+=======
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_esf_class_teach" />
+>>>>>>> iterativ_v1
             <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+<<<<<<< HEAD
       <Target title="example_esf_class">
          <Option output="/home/martin/github/v4r/debug/bin/example-esf_class" prefix_auto="0" extension_auto="0" />
 >>>>>>> alexnet_test
+=======
+      <Target title="example_esf_class_teach/fast">
+         <Option output="/home/martin/github/v4r/debug/bin/example-esf_class_teach" prefix_auto="0" extension_auto="0" />
+>>>>>>> iterativ_v1
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
          <Option object_output="./" />
          <Option type="1" />
@@ -1687,12 +2198,17 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
+<<<<<<< HEAD
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_caffe_iterativ_v1" />
+=======
+            <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_esf_class_teach/fast" />
+>>>>>>> iterativ_v1
             <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+<<<<<<< HEAD
       <Target title="example_caffe_iterativ_v1/fast">
          <Option output="/home/martin/github/v4r/debug/bin/example-caffe_iterativ_v1" prefix_auto="0" extension_auto="0" />
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
@@ -2223,14 +2739,21 @@
          <Option output="/home/martin/github/v4r/debug/bin/example-train_data_gen" prefix_auto="0" extension_auto="0" />
 >>>>>>> alexnet_test
 >>>>>>> Stashed changes
+=======
+      <Target title="example_esf_class">
+         <Option output="/home/martin/github/v4r/debug/bin/example-esf_class" prefix_auto="0" extension_auto="0" />
+>>>>>>> iterativ_v1
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> iterativ_v1
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
             <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
@@ -2249,6 +2772,7 @@
             <Add option="-DQT_WIDGETS_LIB" />
             <Add option="-DQT_GUI_LIB" />
             <Add option="-DQT_CORE_LIB" />
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
             <Add option="-DCERES_VERSION_LESS_1_9_0" />
@@ -2261,6 +2785,8 @@
 =======
 >>>>>>> alexnet_test
 >>>>>>> Stashed changes
+=======
+>>>>>>> iterativ_v1
             <Add directory="/home/martin/github/v4r/3rdparty" />
             <Add directory="/home/martin/github/v4r/debug" />
             <Add directory="/home/martin/github/v4r/modules/common/include" />
@@ -2276,23 +2802,32 @@
             <Add directory="/usr/include/c++/4.8" />
             <Add directory="/usr/include/c++/4.8/backward" />
             <Add directory="/usr/include/eigen3" />
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> iterativ_v1
             <Add directory="/usr/include/freetype2" />
             <Add directory="/usr/include/hdf5/serial" />
             <Add directory="/usr/include/jsoncpp" />
             <Add directory="/usr/include/libxml2" />
+<<<<<<< HEAD
 =======
 >>>>>>> alexnet_test
 >>>>>>> Stashed changes
+=======
+>>>>>>> iterativ_v1
             <Add directory="/usr/include/ni" />
             <Add directory="/usr/include/opencv" />
             <Add directory="/usr/include/openni2" />
             <Add directory="/usr/include/pcl-1.7" />
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> iterativ_v1
             <Add directory="/usr/include/python2.7" />
             <Add directory="/usr/include/tcl" />
             <Add directory="/usr/include/vtk-6.2" />
@@ -2314,6 +2849,7 @@
          </Compiler>
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_esf_class" />
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
             <Add directory="/usr/include/vtk-5.8" />
@@ -2329,11 +2865,14 @@
 =======
 >>>>>>> alexnet_test
 >>>>>>> Stashed changes
+=======
+>>>>>>> iterativ_v1
             <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       <Target title="example_train_data_gen/fast">
          <Option output="/home/martin/github/v4r/debug/bin/example-train_data_gen" prefix_auto="0" extension_auto="0" />
@@ -2346,14 +2885,21 @@
          <Option output="/home/martin/github/v4r/debug/bin/example-train_data_gen" prefix_auto="0" extension_auto="0" />
 >>>>>>> alexnet_test
 >>>>>>> Stashed changes
+=======
+      <Target title="example_esf_class/fast">
+         <Option output="/home/martin/github/v4r/debug/bin/example-esf_class" prefix_auto="0" extension_auto="0" />
+>>>>>>> iterativ_v1
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> iterativ_v1
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
             <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
@@ -2372,6 +2918,7 @@
             <Add option="-DQT_WIDGETS_LIB" />
             <Add option="-DQT_GUI_LIB" />
             <Add option="-DQT_CORE_LIB" />
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
             <Add option="-DCERES_VERSION_LESS_1_9_0" />
@@ -2384,6 +2931,8 @@
 =======
 >>>>>>> alexnet_test
 >>>>>>> Stashed changes
+=======
+>>>>>>> iterativ_v1
             <Add directory="/home/martin/github/v4r/3rdparty" />
             <Add directory="/home/martin/github/v4r/debug" />
             <Add directory="/home/martin/github/v4r/modules/common/include" />
@@ -2399,20 +2948,27 @@
             <Add directory="/usr/include/c++/4.8" />
             <Add directory="/usr/include/c++/4.8/backward" />
             <Add directory="/usr/include/eigen3" />
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> iterativ_v1
             <Add directory="/usr/include/freetype2" />
             <Add directory="/usr/include/hdf5/serial" />
             <Add directory="/usr/include/jsoncpp" />
             <Add directory="/usr/include/libxml2" />
+<<<<<<< HEAD
 =======
 >>>>>>> alexnet_test
 >>>>>>> Stashed changes
+=======
+>>>>>>> iterativ_v1
             <Add directory="/usr/include/ni" />
             <Add directory="/usr/include/opencv" />
             <Add directory="/usr/include/openni2" />
             <Add directory="/usr/include/pcl-1.7" />
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <Add directory="/usr/include/vtk-5.8" />
             <Add directory="/usr/include/x86_64-linux-gnu" />
@@ -2425,6 +2981,8 @@
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_train_data_gen/fast" />
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> iterativ_v1
             <Add directory="/usr/include/python2.7" />
             <Add directory="/usr/include/tcl" />
             <Add directory="/usr/include/vtk-6.2" />
@@ -2446,16 +3004,22 @@
          </Compiler>
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_esf_class/fast" />
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> iterativ_v1
             <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       </Build>
       <Unit filename="/home/martin/github/v4r/samples/examples/classify_with_RF.cpp">
 =======
+=======
+>>>>>>> iterativ_v1
       <Target title="example_cloud_generator">
          <Option output="/home/martin/github/v4r/debug/bin/example-cloud_generator" prefix_auto="0" extension_auto="0" />
          <Option working_dir="/home/martin/github/v4r/debug/bin" />
@@ -3487,6 +4051,7 @@
          </Compiler>
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_caffe_model_test/fast" />
+<<<<<<< HEAD
 =======
             <Add directory="/usr/include/vtk-5.8" />
             <Add directory="/usr/include/x86_64-linux-gnu" />
@@ -3498,6 +4063,8 @@
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 example_train_data_gen/fast" />
 >>>>>>> alexnet_test
+=======
+>>>>>>> iterativ_v1
             <CompileFile command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/martin/github/v4r/debug/samples/own/Makefile&quot;  VERBOSE=1 clean" />
@@ -3506,6 +4073,9 @@
       </Build>
       <Unit filename="/home/martin/github/v4r/samples/examples/classify_with_RF.cpp">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> iterativ_v1
          <Option target="example_classify_with_RF"/>
       </Unit>
       <Unit filename="/home/martin/github/v4r/samples/examples/classify_with_SVM_tmp.cpp">
@@ -3564,6 +4134,7 @@
       </Unit>
       <Unit filename="/home/martin/github/v4r/samples/own/test_pcl_input.cpp">
          <Option target="example_test_pcl_input"/>
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
       </Unit>
@@ -3596,6 +4167,8 @@
 =======
 >>>>>>> alexnet_test
 >>>>>>> Stashed changes
+=======
+>>>>>>> iterativ_v1
       </Unit>
       <Unit filename="/home/martin/github/v4r/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />

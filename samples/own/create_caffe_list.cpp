@@ -39,7 +39,7 @@ int main(int argc, char** argv){
 
 
     std::vector<int> model_numbers;
-    std::vector<std::string> model_names;
+    std::vector<std::string> file_names;
 
 //    char end = path.back();
 //    if(end!='/')
@@ -70,8 +70,7 @@ int main(int argc, char** argv){
             file_name.append(" ");
             file_name.append(std::to_string(i));
 
-            outSt<<file_name;
-            outSt<<std::endl;
+            file_names.push_back(file_name);
 
         }
 
@@ -79,6 +78,14 @@ int main(int argc, char** argv){
 
 
     }
+    std::random_shuffle(file_names.begin(),file_names.end());
+
+    for(int i=0; i<file_names.size(); i++){
+        outSt<<file_names[i];
+        outSt<<std::endl;
+    }
+
+
 
 outSt.close();
 
