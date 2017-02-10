@@ -1,15 +1,21 @@
 #include <v4r/io/filesystem.h>
 #include <boost/program_options.hpp>
+#include <v4r/segmentation/pcl_segmentation_methods.h>
+#include <pcl/common/centroid.h>
 #include <pcl/io/pcd_io.h>
 #include <string>
 #include <algorithm>
 #include <iostream>
 
+v4r::PCLSegmenter<pcl::PointXYZRGB>::Parameter seg_param;
+
+typedef pcl::PointXYZ PointT;
+
 namespace po = boost::program_options;
 
 int main(int argc, char** argv){
 
-
+    seg_param.seg_type_ = 1;
     po::options_description desc("Copies and renames files\n======================================\n**Allowed options");
     std::string path, input, pc;
     bool visualize = false;
@@ -102,8 +108,41 @@ int main(int argc, char** argv){
 
 
         pcl::io::loadPCDFile(load_path+files[k],*cloud);
+        v4r::PCLSegmenter<pcl::PointXYZRGB> seg(seg_param);
+        std::vector<pcl::PointIndices> found_clusters;
 
-        pcl::io::savePCDFileBinary(path+file_name+"-"+save_number_string+".pcd",*cloud);
+            seg.set_input_cloud(*cloud);
+            seg.do_segmentation(found_clusters);
+
+            int min_id=-1;
+            double min_centroid = std::numeric_limits<double>::max();
+
+            for(size_t i=0; i < found_clusters.size(); i++)
+            {
+                typename pcl::PointCloud<PointT>::Ptr clusterXYZ (new pcl::PointCloud<PointT>());
+
+                pcl::copyPointCloud(*cloud, found_clusters[i], *clusterXYZ);
+                Eigen::Vector4f centroid;
+                pcl::compute3DCentroid (*clusterXYZ, centroid);
+
+                //            double dist = centroid[0]*centroid[0] + centroid[1]*centroid[1] + centroid[2]*centroid[2];
+
+                if (centroid[2] < min_centroid) {
+                    min_centroid = centroid[2];
+                    min_id = i;
+                }
+            }
+
+            if (min_id >= 0) {
+                std::vector<pcl::PointIndices> closest_cluster;
+                closest_cluster.push_back( found_clusters[min_id] );
+                found_clusters = closest_cluster;
+            }
+
+            pcl::PointCloud<pcl::PointXYZRGB>::Ptr clusterXYZRGB (new pcl::PointCloud<pcl::PointXYZRGB>());
+            pcl::copyPointCloud(*cloud, found_clusters[0], *clusterXYZRGB);
+
+        pcl::io::savePCDFileBinary(path+file_name+"-"+save_number_string+".pcd",*clusterXYZRGB);
 
         if(k%101 ==0 ){
             for(int i=0;i<model_names.size();i++){

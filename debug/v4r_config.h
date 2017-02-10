@@ -41,7 +41,7 @@
 /* #undef HAVE_CSTRIPES */
 
 /* NVidia Cuda Basic Linear Algebra Subprograms (BLAS) API*/
-/* #undef HAVE_CUBLAS */
+#define HAVE_CUBLAS
 
 /* NVidia Cuda Runtime API*/
 #define HAVE_CUDA

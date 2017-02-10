@@ -13,7 +13,7 @@ if(WITH_ASSIMP)
     # Find version number in pkgconfig file
     find_file(ASSIMP_PKGCONFIG_FILE assimp.pc
               PATHS /usr/local /opt /usr $ENV{ASSIMP_ROOT}
-              PATH_SUFFIXES lib/pkgconfig
+              PATH_SUFFIXES lib/x86_64-linux-gnu/pkgconfig
               DOC "The Assimp pkfconfig file"
               CMAKE_FIND_ROOT_PATH_BOTH)
     if(ASSIMP_PKGCONFIG_FILE)

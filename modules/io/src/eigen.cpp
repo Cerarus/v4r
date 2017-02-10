@@ -143,7 +143,7 @@ readDescrFromFile(const std::string &file, int padding, int rowSize)
     matrix.resize(0,rowSize);
     int j=0;
     while(in.getline (linebuf, bufferSize)){
-        int start_s=clock();
+        //int start_s=clock();
         std::string line (linebuf);
         std::vector < std::string > strs_2;
         boost::split (strs_2, line, boost::is_any_of (" "));
@@ -151,8 +151,8 @@ readDescrFromFile(const std::string &file, int padding, int rowSize)
         for (int i = 0; i < strs_2.size()-1; i++)
             matrix (j, i) = static_cast<float> (atof (strs_2[i].c_str ()));
         j++;
-        int stop_s=clock();
-        std::cout << "time: " << (stop_s-start_s)/double(CLOCKS_PER_SEC)*1000 << std::endl;
+        //int stop_s=clock();
+        //std::cout << "time: " << (stop_s-start_s)/double(CLOCKS_PER_SEC)*1000 << std::endl;
     }
     return matrix;
 }

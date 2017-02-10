@@ -17,6 +17,7 @@
 
 
 #include <flann/flann.hpp>
+#include <flann/io/hdf5.h>
 
 #include <v4r/ml/svmWrapper.h>
 
@@ -147,6 +148,7 @@ int main(int argc, char** argv){
         char end = temp.back();
         if(end!='/')
             temp.append("/");
+        std::cout << "Loading SVM from: '" << temp << "'." << std::endl;
         classifier.setInFilename(temp.append("svm/Class.model"));
         Eigen::MatrixXf emptym;
         Eigen::VectorXi emptyv;
@@ -162,7 +164,7 @@ int main(int argc, char** argv){
     char end = path.back();
     if(end!='/')
         path.append("/");
-
+    std::cout << "Loading ESF Descriptors from: '" << path << "'." << std::endl;
     for(size_t o=0;o<objects.size();o++){
 
         fo = path;
@@ -179,19 +181,22 @@ int main(int argc, char** argv){
         for(size_t j=0;j<Files.size();j++){
             fn = fp;
             fn.append(Files[j]);
-
-            test = v4r::io::readDescrFromFile(fn,4,640);
+//            std::cout << "Adding file: '" << fn << "'." << std::endl;
+            test = v4r::io::readDescrFromFile(fn,4,1);
 
             all_model_signatures_.conservativeResize(640,all_model_signatures_.cols()+1);
 
-            all_model_signatures_.col(all_model_signatures_.cols()-1) = test.row(0);
+            all_model_signatures_.col(all_model_signatures_.cols()-1) = test.col(0);
             models.push_back(o);
         }
     }
 
     createFLANN();
+
+    //flann::save_to_file():
     std::string path_check = input;
-    std::vector<std::string> files = v4r::io::getFilesInDirectory(path_check.append("/pcd_binary/"),".*.pcd",false);
+    //std::vector<std::string> files = v4r::io::getFilesInDirectory(path_check.append("/pcd_binary/"),".*.pcd",false);
+    std::vector<std::string> files = v4r::io::getFilesInDirectory(path_check,".*.pcd",false);
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZRGB>());
 
     v4r::PCLSegmenter<pcl::PointXYZRGB> seg(seg_param);
@@ -250,30 +255,35 @@ int main(int argc, char** argv){
 
         std::string instream;
         std::string inputfile,item, correct_model;
-        inputfile = input;
-        inputfile.append("/annotation/");
-        inputfile.append(files[k]);
-        inputfile.erase(inputfile.end()-3,inputfile.end());
-        inputfile.append("anno");
-        std::ifstream myfile (inputfile);
+//        inputfile = input;
+//        inputfile.append("/annotation/");
+//        inputfile.append(files[k]);
+//        inputfile.erase(inputfile.end()-3,inputfile.end());
+//        inputfile.append("anno");
+//        std::ifstream myfile (inputfile);
 
-        if (myfile.is_open())
-        {
-            getline (myfile,instream);
-        }
+//        if (myfile.is_open())
+//        {
+//            getline (myfile,instream);
+//        }
 
         std::istringstream iss(instream);
         std::vector<std::string>::iterator it;
 
-        std::vector<std::string> elements{std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{}};
+//        std::vector<std::string> elements{std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{}};
 
-        if(elements.size()>5){
-            correct_model = elements[elements.size()-2];
-            correct_model.append("_");
-            correct_model.append(elements[elements.size()-1]);
-        }
-        else
-            correct_model = elements[elements.size()-1];
+//        if(elements.size()>5){
+//            correct_model = elements[elements.size()-2];
+//            correct_model.append("_");
+//            correct_model.append(elements[elements.size()-1]);
+//        }
+//        else
+//            correct_model = elements[elements.size()-1];
+
+
+        std::vector<std::string> strs;
+        boost::split(strs,files[k],boost::is_any_of("-"));
+        correct_model = strs[0];
 
         it = std::find(model_names.begin(),model_names.end(),correct_model);
         int correct_index = std::distance(model_names.begin(), it);
@@ -407,7 +417,7 @@ int main(int argc, char** argv){
         std::cout<< "Correct: "<< correct_model<<std::endl<<std::endl;
         if(visualize){
             pcl::visualization::CloudViewer viewer ("Simple Cloud Viewer");
-            viewer.showCloud (clusterXYZ);
+            viewer.showCloud (clusterXYZRGB);
 
             while (!viewer.wasStopped ())
             {
